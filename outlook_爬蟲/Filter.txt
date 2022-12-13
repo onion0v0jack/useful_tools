@@ -1,0 +1,9 @@
+【Filter使用DASL查詢語法，此檔案使用 UTF-8 編碼】
+@SQL=
+(
+    ("urn:schemas:httpmail:subject" Like '%Receive_Purchase_Orders%')【urn:schemas:httpmail:subject：主旨】
+    OR ("urn:schemas:httpmail:textdescription" Like '%工單建立結果%') 【urn:schemas:httpmail:textdescription：內文】
+)
+AND ("urn:schemas:httpmail:datereceived" > '2022/04/01')【urn:schemas:httpmail:datereceived：接收日期】
+【AND ("urn:schemas:httpmail:datereceived" < '2022/06/01')】
+【AND ("urn:schemas:httpmail:hasattachment" = 0)】【urn:schemas:httpmail:hasattachment：附檔數量】
